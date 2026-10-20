@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#171b35"><title>CampusCare | Smart College Help Desk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar" id="sidebar">
+ <a class="brand" href="#"><span class="logo">✦</span><span><b>CampusCare</b><small>SMART HELP DESK</small></span></a>
+ <p class="nav-label">WORKSPACE</p>
+ <nav>
+  <button class="nav active" data-page="overview">▦ <span>Overview</span></button>
+  <button class="nav" data-page="requests">▤ <span>My complaints</span><em id="navCount">3</em></button>
+  <button class="nav" data-page="new">＋ <span>New request</span></button>
+  <button class="nav" data-page="assistant">✧ <span>AI assistant</span><i></i></button>
+  <button class="nav" data-page="admin">▣ <span>Admin dashboard</span></button>
+ </nav>
+ <div class="sidebar-bottom"><div class="helpbox"><span class="mini-logo">✧</span><b>Need a quick answer?</b><p>Ask CampusCare assistant anytime.</p><button class="link" data-page="assistant">Chat with AI ↗</button></div><div class="profile"><span class="avatar">AS</span><span><b>Aarav Sharma</b><small>Student account · Demo</small></span></div></div>
+</aside>
+<main>
+<header class="topbar"><button class="menu" id="menu">☰</button><div class="crumb">CampusCare <span>/</span> <b id="crumb">Overview</b></div><div class="top-right"><span class="operational"><i></i> System operational</span><button id="notifications" class="bell" aria-label="Notifications">♧<sup></sup></button><span class="avatar small">AS</span></div></header>
+<div class="content">
+<section class="page active" id="page-overview">
+ <div class="welcome"><div><p class="eyebrow">— STUDENT PORTAL</p><h1>Good afternoon, Aarav <span class="star">✦</span></h1><p class="muted">Your campus support, organized in one place.</p></div><button class="primary" data-page="new">＋ Submit a request</button></div>
+ <div class="hero"><div class="hero-copy"><span class="hero-label">✦ SMARTER CAMPUS SUPPORT</span><h2>Less waiting.<br><span>More doing.</span></h2><p>Raise a concern, follow its progress, and get helpful answers — all from one simple dashboard.</p><button class="hero-button" data-page="new">Create a request <b>→</b></button></div><div class="hero-visual"><div class="ring ring1"></div><div class="ring ring2"></div><div class="float-card"><small>REQUEST STATUS</small><h3>#CC-1048</h3><div class="progress"><span></span></div><p>In progress <b>68%</b></p><footer>✦ Assigned to Student Services</footer></div><span class="check">✓</span><span class="spark">✦</span></div></div>
+ <div class="section-title"><div><h2>Your support snapshot</h2><p>Here’s what’s happening with your requests.</p></div><button class="link" data-page="requests">View all requests →</button></div>
+ <div class="stats">
+  <article class="stat"><div class="stat-top"><span class="stat-icon purple">▤</span><span class="tag">All time</span></div><strong id="total">03</strong><p>Total requests</p><small>— Your submitted requests</small></article>
+  <article class="stat"><div class="stat-top"><span class="stat-icon orange">◷</span><span class="tag orange-text">In review</span></div><strong id="pending">02</strong><p>Pending requests</p><small>— Waiting for an update</small></article>
+  <article class="stat"><div class="stat-top"><span class="stat-icon green">✓</span><span class="tag green-text">Completed</span></div><strong id="resolved">01</strong><p>Resolved requests</p><small>— Successfully handled</small></article>
+  <article class="stat"><div class="stat-top"><span class="stat-icon blue">✧</span><span class="tag blue-text">Available</span></div><strong>24<span class="per">/7</span></strong><p>AI assistant</p><small>— Answers common questions</small></article>
+ </div>
+ <div class="columns"><section class="panel"><div class="panel-head"><div><h3>Recent requests</h3><p>Track your latest campus concerns.</p></div><span class="dots">···</span></div><div class="table-scroll"><table><thead><tr><th>REQUEST</th><th>CATEGORY</th><th>DATE</th><th>STATUS</th></tr></thead><tbody id="recent"></tbody></table></div><button class="panel-link" data-page="requests">See all requests →</button></section>
+ <section class="panel assistant-card"><div class="assistant-title"><span class="ai-icon">✧</span><div><h3>CampusCare AI</h3><p><i></i> Here to help you</p></div><span class="ai-label">AI ASSISTANT</span></div><div class="bot-intro"><span class="bot-avatar">✦</span><p>Hi Aarav! 👋 Need help with a campus service? I can answer common questions or guide you through submitting a request.</p></div><div class="quick"><button data-question="How do I submit a complaint?">Submit a complaint</button><button data-question="How can I track my request?">Track a request</button></div><button class="chat-launch" data-page="assistant">Start a conversation <b>↗</b></button></section></div>
+ <footer class="footer">✦ Built to make campus support simpler <span>•</span> CampusCare Smart Help Desk</footer>
+</section>
+<section class="page" id="page-requests">
+ <div class="page-heading"><div><p class="eyebrow">— REQUEST CENTER</p><h1>My complaints</h1><p class="muted">Every request, one clear view. Track progress from submission to resolution.</p></div><button class="primary" data-page="new">＋ New request</button></div>
+ <div class="filters"><input id="search" placeholder="⌕  Search requests..." aria-label="Search requests"><select id="statusFilter"><option value="all">All statuses</option><option>Pending</option><option>In Progress</option><option>Resolved</option></select><select id="categoryFilter"><option value="all">All categories</option><option>IT Support</option><option>Facilities</option><option>Academics</option><option>Fees & Finance</option><option>Hostel</option><option>Other</option></select></div>
+ <section class="panel"><div class="panel-head"><div><h3>All requests</h3><p id="requestCount">Your submitted requests</p></div><span class="demo-tag">LIVE DEMO DATA</span></div><div class="table-scroll"><table><thead><tr><th>REQUEST</th><th>CATEGORY</th><th>SUBMITTED</th><th>STATUS</th><th>PRIORITY</th></tr></thead><tbody id="allRows"></tbody></table></div><div id="empty" class="empty" hidden>No requests found. Try another filter or submit a new request.</div></section>
+</section>
+<section class="page" id="page-new">
+ <div class="page-heading"><div><p class="eyebrow">— STUDENT SUPPORT</p><h1>Submit a request</h1><p class="muted">Tell us what you need. We’ll help route it to the right team.</p></div></div>
+ <div class="form-layout"><section class="panel form-panel"><div class="panel-head"><div><h3>Request details</h3><p>Fields marked * are required.</p></div><span class="demo-tag">01 / 01</span></div>
+ <form id="requestForm"><div class="field-grid"><label>Request title *<input id="title" required maxlength="90" placeholder="e.g. Wi-Fi not working in library"></label><label>Student email *<input id="email" required type="email" placeholder="you@college.edu"></label></div>
+ <label>Describe your issue *<textarea id="description" required rows="5" placeholder="Share details that will help us understand your request..."></textarea><small>Please do not include passwords or other sensitive information.</small></label>
+ <div class="field-grid"><label>Category *<select id="category" required><option value="">Select a category</option><option>IT Support</option><option>Facilities</option><option>Academics</option><option>Fees & Finance</option><option>Hostel</option><option>Other</option></select></label><label>Priority<select id="priority"><option>Normal</option><option>Low</option><option>High</option></select></label></div>
+ <div class="suggestion"><span>✧</span><div><b>AI category suggestion</b><p id="suggestionText">Start typing to get a suggested category.</p></div><strong id="suggestion">Waiting</strong></div>
+ <div class="form-actions"><button type="reset" class="secondary" id="clear">Clear form</button><button class="primary" type="submit">Submit request →</button></div></form></section>
+ <aside class="side-stack"><div class="info-card"><span class="side-icon">✧</span><h3>Smart routing</h3><p>Keyword-based suggestions help direct your request to the right support team.</p></div><div class="info-card pale"><span class="side-icon">◷</span><h3>What happens next?</h3><ol><li>Your request gets a unique ID.</li><li>The support team reviews it.</li><li>Track its status in My complaints.</li></ol></div><p class="privacy">🔒 This prototype saves data in this browser only. No server is connected.</p></aside></div>
+</section>
+<section class="page" id="page-admin">
+ <div class="page-heading"><div><p class="eyebrow">— STAFF WORKSPACE</p><h1>Admin dashboard</h1><p class="muted">Review, categorize, and update student requests.</p></div><span class="demo-tag">DEMO ADMIN VIEW</span></div>
+ <div class="notice"><b>Prototype mode</b><span>Changes are saved in this browser only. Real staff access requires secure authentication and a backend.</span></div>
+ <div class="stats admin-stats"><article class="stat"><span class="stat-icon purple">▤</span><strong id="adminTotal">03</strong><p>Total requests</p></article><article class="stat"><span class="stat-icon orange">◷</span><strong id="adminPending">02</strong><p>Open requests</p></article><article class="stat"><span class="stat-icon green">✓</span><strong id="adminResolved">01</strong><p>Resolved</p></article><article class="stat"><span class="stat-icon blue">⚑</span><strong id="adminHigh">01</strong><p>High priority</p></article></div>
+ <section class="panel"><div class="panel-head"><div><h3>Manage requests</h3><p>Change a status to create a demo notification.</p></div><input class="admin-search" id="adminSearch" placeholder="Search requests..."></div><div class="table-scroll"><table><thead><tr><th>REQUEST / STUDENT</th><th>CATEGORY</th><th>DATE</th><th>PRIORITY</th><th>STATUS</th><th>UPDATE</th></tr></thead><tbody id="adminRows"></tbody></table></div></section>
+</section>
+<section class="page" id="page-assistant">
+ <div class="page-heading"><div><p class="eyebrow">— YOUR CAMPUS COMPANION</p><h1>AI assistant <span class="star">✧</span></h1><p class="muted">Ask about this website, complaints, tracking, and common campus support questions.</p></div><span class="online-pill"><i></i> ONLINE</span></div>
+ <div class="chat-layout"><section class="panel chat-panel"><div class="panel-head"><span class="ai-icon">✧</span><div><h3>CampusCare Assistant</h3><p>Usually replies instantly</p></div><button id="resetChat" class="reset">Reset ↺</button></div><div id="messages" class="messages" aria-live="polite"><div class="message bot"><span class="message-avatar">✦</span><div><b>CampusCare AI</b><p>Hi there! 👋 I can explain how this website works, help you submit a complaint, show you how to track a request, and answer common campus-support questions. What can I help with?</p></div></div></div><div class="suggested"><small>TRY ASKING</small><button data-question="What can this website do?">What can this website do?</button><button data-question="How do I submit a complaint?">Submit a complaint</button><button data-question="How do I track my complaint?">Track a complaint</button></div><form id="chatForm" class="composer"><input id="chatInput" placeholder="Ask me anything about CampusCare..." autocomplete="off" aria-label="Message"><button aria-label="Send message">↑</button></form><p class="disclaimer">Demo assistant · Uses built-in answers, not a connected AI API.</p></section><aside class="side-stack"><div class="info-card"><span class="side-icon">✧</span><h3>What I can help with</h3><ul><li>Using the help desk</li><li>Submitting and tracking requests</li><li>Understanding request statuses</li><li>Common campus support questions</li></ul></div><div class="info-card pale"><h3>Need human support?</h3><p>For urgent or account-specific issues, contact your college’s official support team. This demo does not send real tickets to staff.</p><button class="link" data-page="new">Create a request →</button></div></aside></div>
+</section>
+</div>
+</main>
+</div>
+<div id="toastArea" class="toast-area" aria-live="polite"></div>
+<div id="modal" class="modal-backdrop" hidden><div class="modal"><button id="closeModal" class="close">×</button><span class="success-icon">✓</span><p class="eyebrow">— REQUEST SUBMITTED</p><h2>Your request is in the system.</h2><p id="modalText">We’ve created a request ID for you.</p><div class="ticket"><small>REQUEST ID</small><b id="ticketId">CC-1051</b><button id="copyId">Copy ID</button></div><button id="viewRequests" class="primary full">View my requests →</button></div></div>
+<script src="script.js"></script>
+</body></html>
